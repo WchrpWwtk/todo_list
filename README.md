@@ -38,14 +38,16 @@ This project is a Todo list application that allow users to create, read, update
    ```bash
    cd todo_list
 3. Build and run the Docker containers:
+
+   Before run this command make sure your `entrypoint.sh` file have end of line sequence is LF not CRLF.
    ```bash
    docker compose up
    ```
    This command will start the Django application, the database defined in the `compose.yml` file.
-4. Create a superuser account:
+5. Create a superuser account:
    ```bash
    docker compose exec server python manage.py createsuperuser
-5. The Django application should now be running. You can access it at `http://localhost:8000`.
+6. The Django application should now be running. You can access it at `http://localhost:8000`.
 
 ## Usage
 
