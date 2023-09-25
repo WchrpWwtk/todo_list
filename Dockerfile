@@ -43,5 +43,3 @@ USER appuser
 
 # Copy the source code into the container.
 COPY . /app/
-
-ENTRYPOINT [ "/app/entrypoint.sh" ]
