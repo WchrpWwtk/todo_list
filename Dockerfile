@@ -43,3 +43,9 @@ USER appuser
 
 # Copy the source code into the container.
 COPY . /app/
+
+COPY wait_for_db.py /app/wait_for_db.py
+
+RUN chmod +x /app/wait_for_db.py
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
