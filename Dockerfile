@@ -16,7 +16,11 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+ADD wait_for_db.py /app
+
 ADD entrypoint.sh /app
+
+RUN chmod +x /app/wait_for_db.py
 
 RUN chmod +x *.sh
 
