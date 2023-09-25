@@ -1,8 +1,10 @@
 services:
   server:
     build: .
-    command: >
-      sh -c "python manage.py collectstatic --noinput && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: 
+      - /bin/sh
+      - '-c'
+      - '/app/entrypoint.sh'
     volumes:
       - .:/app
     ports:

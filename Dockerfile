@@ -16,6 +16,10 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+ADD entrypoint.sh /app
+
+RUN chmod +x *.sh
+
 COPY requirements.txt /app/
 
 # Create a non-privileged user that the app will run under.
