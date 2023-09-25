@@ -7,17 +7,14 @@ def wait_for_db():
     max_retries = 30
     retry_interval = 2
 
-    db_host = os.environ.get("DB_HOST")
-    db_port = os.environ.get("DB_PORT", "5432")
-
-    for i in range(max_retries):
+    for _ in range(max_retries):
         try:
             conn = psycopg2.connect(
-                dbname="mydb",
-                user="myuser",
-                password="mypassword",
-                host=db_host,
-                port=db_port,
+                dbname=os.environ.get("POSTGRES_NAME"),
+                user=os.environ.get("POSTGRES_USER"),
+                password=os.environ.get("PASSWORD"),
+                host="db",
+                port="5432",
             )
             conn.close()
             print("Database is available.")
