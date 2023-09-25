@@ -1,7 +1,7 @@
 services:
   server:
     build: .
-    command: sh -c "python manage.py wait_for_db && python managy.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
