@@ -16,7 +16,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-ADD wait_for_db.py /app
+ADD wait_for_db.py /app/wait_for_db.py
 
 ADD entrypoint.sh /app
 
