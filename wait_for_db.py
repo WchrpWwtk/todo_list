@@ -12,7 +12,7 @@ def wait_for_db():
             conn = psycopg2.connect(
                 dbname=os.environ.get("POSTGRES_NAME"),
                 user=os.environ.get("POSTGRES_USER"),
-                password=os.environ.get("PASSWORD"),
+                password=os.environ.get("POSTGRES_PASSWORD"),
                 host="db",
                 port="5432",
             )
